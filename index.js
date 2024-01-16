@@ -1,11 +1,28 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  if (array.length === 1) {
+    if (array[0]===target){
+      return false;
+    }
+  }
+  else{
+    for(const a of array){
+      for(let i = array.indexOf(a)+ 1; i<array.length; i++){
+        if (array.indexOf(a) !==i){
+          if (a+ array[i] === target){
+            return true;
+          }
+        }
+      }
+    }
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
 */
-
+//this is linear time complexity algorithm.
 /* 
   Add your pseudocode here
 */
